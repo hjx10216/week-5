@@ -20,4 +20,18 @@ body {
     bottom: 0;
     overflow-y: auto;
     padding: 20px;
+    font-size:15px;
+}
+
+button{
+  margin-right:30px;
+  width: 120px;
+  float:right;
+  font-size:10px;
+}
+
+input{
+  margin-right:30px;
+  float:right;
+  width:150px;
 }
