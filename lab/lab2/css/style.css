@@ -21,3 +21,18 @@ body {
     overflow-y: auto;
     padding: 20px;
 }
+
+.leaflet-marker-icon{
+  background-image: url('../js/images/marker-icon.png');
+}
+
+button{
+  margin-right:70px;
+  width: 80px;
+  float:right;
+}
+
+input{
+  margin-right:70px;
+  float:right;
+}

@@ -171,21 +171,22 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 $(document).ready(function() {
   // Do your stuff here
   $("#text-label1").text('Object ID');
-  $("#text-label2").text('Name of Person');
+  $("#text-label2").text('Name');
   $("#text-label3").text('Street Address');
   $("#number-label").text('Age');
-  $("#checkbox-label1").text('Male or Not');
+  $("#checkbox-label1").text('Male or Female');
   $("#checkbox-label2").text('Love banana or Not');
   $("#color-label").text('Color');
+  $("button").text('Plot data');
 
   $("#text-input1").val('Profile');
   $("#text-input2").val('Monkey');
   $("#text-input3").val('Zoo Street No.05');
   $("#numeric-input").val('6');
-  //$("#cbox-input1").val('Zoo Street No.05');
-  //$("#cbox-input2").val('Zoo Street No.05');
-  //$("#color-input").val('Yellow');
-  $("button").val('Confirm');
+  $("#cbox-input1").val(true);
+  $("#cbox-input2").val(false);
+  $("#color-input").val('#FF0000');
+
 
   var dataset = {
     topic: $("#text-input1").val(),
@@ -197,6 +198,8 @@ $(document).ready(function() {
     color: $("#color-input").val()
   };
 
+  var inputColor = $("#color-input").val();
+
   $('#text-input1').prop('disabled', false);
   $('#text-input2').prop('disabled', false);
   $('#text-input3').prop('disabled', false);
@@ -205,10 +208,24 @@ $(document).ready(function() {
   $('#cbox-input2').prop('disabled', false);
   $('#color-input').prop('disabled', false);
 
-  $('button').click(function() {
-    console.log(dataset);
+  var myIcon = L.divIcon({
+    className: ('.leaflet-marker-icon'),
+    iconSize: [25, 41]
   });
-  
-  var myMarkers = [L.marker([39.9522, -75.1639])];
+
+
+  $('button').click(function() {
+    console.log(dataset.banana);
+
+    L.circle([39.9522, -75.1639], 200,{color:inputColor})
+      .bindPopup(dataset.address)
+      .addTo(map);
+
+    L.marker([39.9522, -75.1639], {icon: myIcon})
+    .bindPopup(dataset.address)
+    .addTo(map);
+
+  });
+
 
 });
