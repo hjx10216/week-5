@@ -39,7 +39,7 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
   Task 8: Try Leaflet's divIcon
 
   Task 9: Make a parametric function (one that accepts parameters/arguments) to fill the form out.
-  
+
 ===================== */
 
 $(document).ready(function() {
@@ -61,19 +61,6 @@ $(document).ready(function() {
   $("#cbox-input2").val(false);
   $("#color-input").val('#FF0000');
 
-
-  var dataset = {
-    topic: $("#text-input1").val(),
-    name: $("#text-input2").val(),
-    address: $("#text-input3").val(),
-    age: $("#numeric-input").val(),
-    sex: $("#cbox-input1").val(),
-    banana: $("#cbox-input2").val(),
-    color: $("#color-input").val()
-  };
-
-
-
   $('#text-input1').prop('disabled', false);
   $('#text-input2').prop('disabled', false);
   $('#text-input3').prop('disabled', false);
@@ -90,7 +77,15 @@ $(document).ready(function() {
 
   $('button').click(function() {
 
-    console.log(dataset.banana);
+    var dataset = {
+      topic: $("#text-input1").val(),
+      name: $("#text-input2").val(),
+      address: $("#text-input3").val(),
+      age: $("#numeric-input").val(),
+      sex: $("#cbox-input1").val(),
+      banana: $("#cbox-input2").val(),
+      color: $("#color-input").val()
+    };
 
     var inputColor = $("#color-input").val();
 
