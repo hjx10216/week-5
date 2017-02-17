@@ -49,9 +49,8 @@ $(document).ready(function() {
     var makeMarkers = function(a) {
       return _.map(a,function(aa){
           return L.marker([aa[Lat], aa[Lon]]);
-        }
-      );
-    };
+        });
+      };
 
     var plotMarkers = function(a) {
       _.each(a,function(aa){aa.addTo(map);});
@@ -66,5 +65,5 @@ $(document).ready(function() {
     });
   });
 
-  
+
 });
